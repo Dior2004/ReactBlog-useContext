@@ -1,8 +1,11 @@
 import { React, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
+import { useContext } from "react";
+import DataContext from "../context/DataContext";
 
-const Nav = ({ setTitle, search, setSearch, navigateBack }) => {
+const Nav = () => {
+  const { setTitle, search, setSearch, navigateBack } = useContext(DataContext);
   const location = useLocation();
 
   useEffect(() => {

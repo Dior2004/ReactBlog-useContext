@@ -4,8 +4,12 @@ import {
   MdOutlineTabletMac,
   MdOutlineLaptopMac,
 } from "react-icons/md";
+import { useContext } from "react";
+import DataContext from "../context/DataContext";
 
-const Header = ({ title, width }) => {
+const Header = () => {
+  const { title, width } = useContext(DataContext);
+
   return (
     <header>
       <div className="wrap">

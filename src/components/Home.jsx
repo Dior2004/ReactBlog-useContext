@@ -1,15 +1,19 @@
 import React from "react";
 import Feed from "./Feed";
 import Loader from "./Loader";
+import { useContext } from "react";
+import DataContext from "../context/DataContext";
 
-const Home = ({ searchResults, search, fetchError, loader }) => {
+const Home = () => {
+  const { searchResults, search, fetchError, loader } = useContext(DataContext);
+
   return (
     <main className="Home">
       {!fetchError ? (
         searchResults.length ? (
           loader ? (
             <div className="wrap">
-              <Feed posts={searchResults} />
+              <Feed />
             </div>
           ) : (
             <Loader />

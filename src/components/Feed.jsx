@@ -1,10 +1,14 @@
 import React from "react";
 import Post from "./Post";
+import { useContext } from "react";
+import DataContext from "../context/DataContext";
 
-const Feed = ({ posts }) => {
+const Feed = () => {
+  const { searchResults } = useContext(DataContext);
+  // as we are not drilling props down we won't need posts instead we need the actual array itself
   return (
     <>
-      {posts.map((post) => (
+      {searchResults.map((post) => (
         <Post key={post.id} post={post} />
       ))}
     </>

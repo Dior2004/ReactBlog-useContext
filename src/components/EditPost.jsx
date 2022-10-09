@@ -3,18 +3,22 @@ import { useParams, Link } from "react-router-dom";
 import { FiEdit3, FiTrash2 } from "react-icons/fi";
 import { MdOutlineCancel } from "react-icons/md";
 import Loader from "./Loader";
+import { useContext } from "react";
+import DataContext from "../context/DataContext";
 
-const EditPost = ({
-  editTitle,
-  setEditTitle,
-  editBody,
-  setEditBody,
-  posts,
-  handleEdit,
-  handleDelete,
-  handleCancel,
-  loader,
-}) => {
+const EditPost = () => {
+  const {
+    editTitle,
+    setEditTitle,
+    editBody,
+    setEditBody,
+    posts,
+    handleEdit,
+    handleDelete,
+    handleCancel,
+    loader,
+  } = useContext(DataContext);
+
   const { id } = useParams();
   const postArr = posts.find((post) => post.id.toString() === id);
 

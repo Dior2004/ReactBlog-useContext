@@ -1,13 +1,12 @@
 import React from "react";
 import { FiPlus } from "react-icons/fi";
+import { useContext } from "react";
+import DataContext from "../context/DataContext";
 
-const NewPost = ({
-  postTitle,
-  setPostTitle,
-  postBody,
-  setPostBody,
-  handleSubmit,
-}) => {
+const NewPost = () => {
+  const { postTitle, setPostTitle, postBody, setPostBody, handleSubmit } =
+    useContext(DataContext);
+
   return (
     <main className="NewPost">
       <div className="wrap">

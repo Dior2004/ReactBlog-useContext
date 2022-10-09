@@ -3,8 +3,12 @@ import { FiTrash2, FiEdit3 } from "react-icons/fi";
 import { RiArrowGoBackLine } from "react-icons/ri";
 import { useParams, Link } from "react-router-dom";
 import Loader from "./Loader";
+import { useContext } from "react";
+import DataContext from "../context/DataContext";
 
-const PostPage = ({ loader, posts, handleDelete }) => {
+const PostPage = () => {
+  const { loader, posts, handleDelete } = useContext(DataContext);
+
   // const id = useParams(); /* useParams gives us an array like {id: "2"} 2 is in string */ and this 2 came from browser's searchbar (localhost:3000/post/{anything})
 
   const { id } = useParams();
