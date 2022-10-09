@@ -6,9 +6,15 @@ import {
 } from "react-icons/md";
 import { useContext } from "react";
 import DataContext from "../context/DataContext";
+import useWindowSize from "../hooks/useWindowSize"; // importing the custom hook from hooks folder
 
 const Header = () => {
-  const { title, width } = useContext(DataContext);
+  const { title } = useContext(DataContext);
+
+  // const useWindowSizeObj = useWindowSize();  // this is a function like we have created in earlier in the hooks directory
+  // console.log(useWindowSizeObj); // is an object with width and heigth propertirs like {width: undefined, height: undefined}
+  // we can select a specific element following like this ...
+  const { width } = useWindowSize(); // result is going to be width value that is changing accordingly
 
   return (
     <header>
