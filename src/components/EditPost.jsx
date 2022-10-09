@@ -56,8 +56,8 @@ const EditPost = () => {
                 <button
                   type="submit"
                   className={
-                    editBody.length >= 3 &&
-                    editTitle.length &&
+                    editBody.trimEnd().length >= 3 &&
+                    editTitle.trimEnd().length &&
                     (postArr.title !== editTitle.trimEnd() ||
                       postArr.body !== editBody.trimEnd())
                       ? "edit_post_button"

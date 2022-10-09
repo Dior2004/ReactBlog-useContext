@@ -104,7 +104,7 @@ export const DataProvider = ({ children }) => {
   // edit axios CRUD => U == "PATCH" but we use "PUT" instead bcoz we are replaceing the whole array
 
   const handleEdit = async (id) => {
-    if (editBody.length < 3 || editTitle.length < 1) return;
+    if (editBody.trimEnd().length < 3 || editTitle.trimEnd().length < 1) return;
 
     const datetime = format(new Date(), `MMMM dd, yyyy pp`);
     const updatedPost = {
